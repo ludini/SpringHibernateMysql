@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.forcetech.pojo.Column" table="f_column" >
+        <id name="id" type="integer">
+            <column name="ID" />
+            <generator class="native"></generator>
+        </id>
+
+        <property name="name" type="string">
+            <column name="Name" length="100" not-null="true" />
+        </property>
+        <property name="description" type="string">
+            <column name="Description" length="1024" />
+        </property>
+        <property name="catalog" type="string">
+            <column name="Catalog" length="300" not-null="true" />
+        </property>
+        <property name="fileName" type="string">
+            <column name="FileName" length="200" not-null="true" />
+        </property>
+        <property name="auditing" type="integer">
+            <column name="Auditing" not-null="true" />
+        </property>
+        <property name="content" type="string">
+            <column name="Content" length="16777215" />
+        </property>
+        <property name="columnPic" type="string">
+            <column name="ColumnPic" length="100" />
+        </property>               
+		<property name="parentColumnID" type="integer" update="false">
+            <column name="ParentColumnID" not-null="true" />
+        </property>
+		 <property name="property1" type="string">
+            <column name="Property1" length="100" />
+        </property>
+        <property name="property2" type="string">
+            <column name="Property2" length="100" />
+        </property>
+        <property name="property3" type="string">
+            <column name="Property3" length="100" />
+        </property>
+        <property name="property4" type="string">
+            <column name="Property4" length="100" />
+        </property>
+        <property name="property5" type="string">
+            <column name="Property5" length="100" />
+        </property>
+        <property name="property6" type="string">
+            <column name="Property6" length="100" />
+        </property>
+		 <property name="property7" type="string">
+            <column name="Property7" length="100" />
+        </property>
+        <property name="property8" type="string">
+            <column name="Property8" length="100" />
+        </property>
+        <property name="property9" type="string">
+            <column name="Property9" length="100" />
+        </property>
+        <property name="property10" type="string">
+            <column name="Property10" length="100" />
+        </property>
+        <property name="property11" type="string">
+            <column name="Property11" length="100" />
+        </property>
+        <property name="property12" type="string">
+            <column name="Property12" length="100" />
+        </property>       
+		 <property name="property13" type="string">
+            <column name="Property13" length="100" />
+        </property>
+        <property name="property14" type="string">
+            <column name="Property14" length="100" />
+        </property>
+        <property name="property15" type="string">
+            <column name="Property15" length="100" />
+        </property>   
+        <many-to-one name="documentType" class="com.forcetech.pojo.DocumentType" fetch="select">
+            <column name="DocumentTypeID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="columnType" class="com.forcetech.pojo.ColumnType" fetch="select">
+            <column name="ColumnTypeID" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
